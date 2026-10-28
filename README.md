@@ -397,3 +397,6 @@ docker compose up --build  # در این صورت هر چی تغییرات ان�
 docker-compose exec backend python manage.py migrate
 #------------------------------------------------------------------
 ```
+# add new libray in docker before starting 
+docker compose exec backend sh -c "pip install python-decouple"
+
