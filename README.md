@@ -400,3 +400,7 @@ docker-compose exec backend python manage.py migrate
 # add new libray in docker before starting 
 docker compose exec backend sh -c "pip install python-decouple"
 
+# display logs docker compose before starting docker 
+docker compose logs -f backend
+
+
