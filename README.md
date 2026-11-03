@@ -403,4 +403,6 @@ docker compose exec backend sh -c "pip install python-decouple"
 # display logs docker compose before starting docker 
 docker compose logs -f backend
 
+# if you changed docker images befor compse up, you have to use below command to add new chanage
+docker compse up -d --build backend(backend ==> image name)
 
