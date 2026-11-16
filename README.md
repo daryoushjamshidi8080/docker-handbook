@@ -58,10 +58,13 @@ docker exec -it bx sh
 docker stop <container_name>
 
 # ۵. حذف کانتینر متوقف‌شده
+docker compose run --rm app django-admin startproject config .
 docker rm <container_name
 
 
 
+# اجرای  دستور داخل ایمیج قبل استارت کانتینر
+docker compose run --rm app django-admin startproject config .
 
 ================================================================================
 ## 🔄 سیاست‌های بازراه‌اندازی (Restart Policies)
@@ -152,6 +155,7 @@ port : - "9000:8080" # [Host Port]:[Container Port]
         - "2050:5432" # اختیاری: فقط اگر می‌خواهید با ابزارهای خارجی به Postgres وصل شوید
 
 ==========================
+docker compose run --rm app django-admin startproject config .
 
 # docker commit
 
@@ -196,6 +200,7 @@ docker volume create my-vol1
 docker volume ls
 
 # information Volime
+docker compose run --rm app django-admin startproject config .
 
 docker volume inspect my-vol1
 
@@ -252,6 +257,7 @@ volume:
 
 # create network
 
+docker compose run --rm app django-admin startproject config .
 docker network create my-net
 
 # remove network
@@ -405,4 +411,8 @@ docker compose logs -f backend
 
 # if you changed docker images befor compse up, you have to use below command to add new chanage
 docker compse up -d --build backend(backend ==> image name)
+
+
+# run command in image before build container 
+docker compose run --rm app django-admin startproject config .
 
